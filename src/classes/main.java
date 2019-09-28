@@ -1,5 +1,6 @@
 package classes;
 
+import collections.BebidasCollection;
 import utils.Utils;
 
 public class main {
@@ -37,17 +38,56 @@ public class main {
 		System.out.println("");
 		System.out.println("Digite [0] para voltar");
 		
-		String opcao = Utils.scanner.next();
-		
+		String opcao = Utils.scanner.next();		
 		if (opcao.equals("1")) {
 			//Tela de cliente
 		} else if (opcao.equals("2")) {
 			//Tela de comida
-		} else if (opcao.equals("0")) {
+		} else if (opcao.equals("3")) {
 			Utils.limparTela();
-			menuInicial();			
+			menuBebidas();			
 		}
 		
+	}
+	
+	public static void menuBebidas() {
+		
+		Utils.limparTela();		
+		System.out.println("Tela de Bebidas");
+		System.out.println("");
+		System.out.println("1 - Cadastrar");
+		System.out.println("2 - Listar");
+		System.out.println("3 - Alterar");
+		System.out.println("4 - Deletar");
+		System.out.println("");
+		System.out.println("Digite [0] para voltar");
+		
+		String opcao = Utils.scanner.next();	
+		if (opcao.equals("1")) {
+			//Tela de cadastro
+			Utils.limparTela();
+			Bebida.adicionarBebida();
+							
+		} else if (opcao.equals("2")) {
+			//Tela de listar
+			Utils.limparTela();
+			Bebida.listarBebidas();
+			
+		} else if (opcao.equals("3")) {
+			//Alterar
+			
+		} else if (opcao.equals("4")) {
+			//Deletar
+			Utils.limparTela();
+			Bebida.deletarBebida();
+		
+		} else if (opcao.equals("0")) {
+			//Voltar para cadastros
+			menuCadastros();
+		
+		}
+		
+			
 	}
 
 }
