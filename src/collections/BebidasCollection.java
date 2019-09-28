@@ -4,9 +4,9 @@ import classes.Bebida;
 
 public class BebidasCollection {
 	
-	static ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
+	private static ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 	
-	void adicionarBebida(Bebida b) {
+	public static void adicionarBebida(Bebida b) {
 		bebidas.add(b);
 	}
 	
