@@ -23,10 +23,10 @@ public class BebidasCollection {
 		}
 		
 		System.out.println("");
-		System.out.println("Digite [0] para voltar");
+		System.out.println("Digite [v] para voltar");
 		
 		String opcao = Utils.scanner.next();		
-		if (opcao.equals("0")) {
+		if (opcao.equals("v")) {
 			main.menuBebidas();
 		}
 		
@@ -36,8 +36,12 @@ public class BebidasCollection {
 		bebidas.remove(id);
 	}
 	
-	public static String listarBebidaIndividual(int i) {
-		return bebidas.get(i).getDescricao();
+	public static void listarBebidaIndividual(int i) {
+		System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getUnidadeDeVenda());
+	}
+	
+	public static void alterarBebida(int id, Bebida b) {
+		bebidas.set(id, b);
 	}
 		
 }

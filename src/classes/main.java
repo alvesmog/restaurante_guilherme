@@ -36,7 +36,7 @@ public class main {
 		System.out.println("2 - Comida");
 		System.out.println("3 - Bebida");
 		System.out.println("");
-		System.out.println("Digite [0] para voltar");
+		System.out.println("Digite [v] para voltar");
 		
 		String opcao = Utils.scanner.next();		
 		if (opcao.equals("1")) {
@@ -60,7 +60,7 @@ public class main {
 		System.out.println("3 - Alterar");
 		System.out.println("4 - Deletar");
 		System.out.println("");
-		System.out.println("Digite [0] para voltar");
+		System.out.println("Digite [v] para voltar");
 		
 		String opcao = Utils.scanner.next();	
 		if (opcao.equals("1")) {
@@ -74,14 +74,15 @@ public class main {
 			Bebida.listarBebidas();
 			
 		} else if (opcao.equals("3")) {
-			//Alterar
+			Utils.limparTela();
+			Bebida.alterarBebida();
 			
 		} else if (opcao.equals("4")) {
 			//Deletar
 			Utils.limparTela();
 			Bebida.deletarBebida();
 		
-		} else if (opcao.equals("0")) {
+		} else if (opcao.equals("v")) {
 			//Voltar para cadastros
 			menuCadastros();
 		

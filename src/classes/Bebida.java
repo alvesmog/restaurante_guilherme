@@ -40,10 +40,10 @@ public class Bebida extends Alimento{
 		System.out.println("- Unidade de venda: " + b.unidadeDeVenda);
 		
 		System.out.println("");
-		System.out.println("Digite [0] para voltar");
+		System.out.println("Digite [v] para voltar");
 		
 		String opcao = Utils.scanner.next();		
-		if (opcao.equals("0")) {
+		if (opcao.equals("v")) {
 			main.menuBebidas();
 		}
 		
@@ -53,14 +53,15 @@ public class Bebida extends Alimento{
 	
 	public static void deletarBebida() {
 		System.out.println("Digite o índice da bebida que deseja deletar: ");
+		System.out.println("");
 		listarBebidas();
 		
 		int id = Utils.scanner.nextInt();
-		String nome = BebidasCollection.listarBebidaIndividual(id);
+		//String nome = BebidasCollection.listarBebidaIndividual(id);
 		BebidasCollection.deletarBebidas(id);
 		
 		Utils.limparTela();
-		System.out.println(nome + "foi removido(a) da lista!");
+		//System.out.println(nome + "foi removido(a) da lista!");
 		System.out.println("");
 		System.out.println("Lista atualizada:");
 		System.out.println("");
@@ -69,6 +70,32 @@ public class Bebida extends Alimento{
 	}
 	
 	//Alterar bebida
+	public static void alterarBebida() {
+		System.out.println("Digite o índice da bebida que deseja alterar: ");
+		System.out.println("");
+		listarBebidas();
+		int id = Utils.scanner.nextInt();
+		Utils.limparTela();
+		BebidasCollection.listarBebidaIndividual(id);
+		System.out.println("======================================"); 
+		System.out.println("Digite um novo valor para 'Nome'"); 
+		String n = Utils.scanner.next();
+		System.out.println("Digite um novo valor para 'Unidade de venda'");
+		String u = Utils.scanner.next();
+		Bebida b = new Bebida("Bebida", u, n);
+		BebidasCollection.alterarBebida(id, b);
+		System.out.println("======================================"); 
+		BebidasCollection.listarBebidaIndividual(id);
+		System.out.println("");
+		System.out.println("Digite [v] para voltar");
+		
+		String opcao = Utils.scanner.next();		
+		if (opcao.equals("v")) {
+			main.menuBebidas();
+		}
+		
+	}
+	
 	
 	//Listar bebidas
 	public static void listarBebidas() {	
