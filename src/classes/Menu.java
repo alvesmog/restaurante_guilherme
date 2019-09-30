@@ -130,5 +130,37 @@ public class Menu {
 		}
 
 	}
+	
+	public static void menuClientes() {
+		
+		menuEspecifico("Cliente");
+
+		String opcao = Utils.scanner.next();
+		if (opcao.equals("1")) {
+			// Tela de cadastro
+			Utils.limparTela();
+			Cliente.adicionarCliente();
+
+		} else if (opcao.equals("2")) {
+			// Tela de listar
+			Utils.limparTela();
+			Cliente.listarClientes();
+
+		} else if (opcao.equals("3")) {
+			Utils.limparTela();
+			Cliente.alterarCliente();
+
+		} else if (opcao.equals("4")) {
+			// Deletar
+			Utils.limparTela();
+			Cliente.deletarCliente();
+
+		} else if (opcao.equals("v")) {
+			// Voltar para cadastros
+			menuCadastros();
+
+		}
+
+	}
 
 }
