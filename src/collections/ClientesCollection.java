@@ -4,6 +4,8 @@ import classes.Menu;
 import utils.Utils;
 import classes.Cliente;
 
+//Classe para armazenar os clientes cadastrados
+
 public class ClientesCollection {
 	
 	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();

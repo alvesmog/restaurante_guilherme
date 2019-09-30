@@ -3,7 +3,8 @@ package classes;
 import utils.Utils;
 
 public class Menu {
-
+	
+	//Tela inicial
 	public static void menuInicial() {
 		
 		System.out.println("Sistema de Restaurante");
@@ -16,14 +17,15 @@ public class Menu {
 		String opcao = Utils.scanner.next();
 
 		if (opcao.equals("1")) {
-			// Tela de pedidos
+			menuPedidos();
 		} else if (opcao.equals("2")) {
 			// Tela de cadastros
 			menuCadastros();
 		}
 
 	}
-
+	
+	//Cadastros
 	public static void menuCadastros() {
 		
 		Utils.limparTela();
@@ -52,7 +54,7 @@ public class Menu {
 
 	}
 	
-	public static void menuEspecifico(String e) {
+	public static void menuEspecifico(String e) { //Abstração do menu de cadastros. Possibilita re-utilizar essa parte para Clientes, Comidas e Bebidas.
 		
 		Utils.limparTela();
 		
@@ -86,6 +88,7 @@ public class Menu {
 			Bebida.listarBebidas();
 
 		} else if (opcao.equals("3")) {
+			// Tela de alterar
 			Utils.limparTela();
 			Bebida.alterarBebida();
 
@@ -102,7 +105,7 @@ public class Menu {
 
 	public static void menuComidas() {
 	
-		menuEspecifico("Comida");
+		menuEspecifico("Comida"); //Chama a abstração, passando como parâmetro o menu que desejamos
 
 		String opcao = Utils.scanner.next();
 		if (opcao.equals("1")) {
@@ -134,9 +137,9 @@ public class Menu {
 	
 	public static void menuClientes() {
 		
-		menuEspecifico("Cliente");
-
+		menuEspecifico("Cliente"); //Chama a abstração, passando como parâmetro o menu que desejamos
 		String opcao = Utils.scanner.next();
+		
 		if (opcao.equals("1")) {
 			// Tela de cadastro
 			Utils.limparTela();
@@ -148,6 +151,7 @@ public class Menu {
 			Cliente.listarClientes();
 
 		} else if (opcao.equals("3")) {
+			//Alterar
 			Utils.limparTela();
 			Cliente.alterarCliente();
 
@@ -162,6 +166,12 @@ public class Menu {
 
 		}
 
+	}
+	
+	public static void menuPedidos() {
+		
+		Pedido pedido = new Pedido();
+		pedido.realizarPedido();
 	}
 
 }

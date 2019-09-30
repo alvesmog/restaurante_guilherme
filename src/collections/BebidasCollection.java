@@ -19,7 +19,7 @@ public class BebidasCollection {
 		System.out.println("ID<--->UNIDADE DE VENDA<--->DESCRIÇÃO");
 		System.out.println("======================================"); 
 		for (int i = 0; i<bebidas.size(); i++) {
-			System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getUnidadeDeVenda());
+			System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getprecoDeVenda());
 			
 		}
 		
@@ -38,7 +38,7 @@ public class BebidasCollection {
 	}
 	
 	public static void listarBebidaIndividual(int i) {
-		System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getUnidadeDeVenda());
+		System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getprecoDeVenda());
 	}
 	
 	public static void alterarBebida(int id, Bebida b) {

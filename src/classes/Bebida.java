@@ -11,9 +11,9 @@ public class Bebida extends Alimento{
 	
 	//Construtores
 	
-	public Bebida(String tipo, String unidadeDeVenda, String descricao){
+	public Bebida(String tipo, int precoDeVenda, String descricao){
 		this.setTipo(tipo);
-		this.setUnidadeDeVenda(unidadeDeVenda);
+		this.setprecoDeVenda(precoDeVenda);
 		this.setDescricao(descricao);
 	}
 	
@@ -26,17 +26,17 @@ public class Bebida extends Alimento{
 		
 		System.out.println("Digite o nome da bebida: ");
 		String descricao = Utils.scanner.next();
-		System.out.println("Digite a unidade de venda: ");
-		String unidadeDeVenda = Utils.scanner.next();
+		System.out.println("Digite a preço de venda: ");
+		int precoDeVenda = Utils.scanner.nextInt();
 		String tipo = "Bebida";
 		
-		Bebida b = new Bebida(tipo, descricao, unidadeDeVenda);
+		Bebida b = new Bebida(tipo, precoDeVenda, descricao);
 		BebidasCollection.adicionarBebida(b);
 		Utils.limparTela();
 		System.out.println("Cadastro realizado com sucesso!");
 		System.out.println("");
 		System.out.println("- Bebida: " + b.descricao);
-		System.out.println("- Unidade de venda: " + b.unidadeDeVenda);
+		System.out.println("- Preço de venda: " + b.precoDeVenda);
 		
 		System.out.println("");
 		System.out.println("Digite [v] para voltar");
@@ -78,9 +78,9 @@ public class Bebida extends Alimento{
 		System.out.println("======================================"); 
 		System.out.println("Digite um novo valor para 'Nome'"); 
 		String n = Utils.scanner.next();
-		System.out.println("Digite um novo valor para 'Unidade de venda'");
-		String u = Utils.scanner.next();
-		Bebida b = new Bebida("Bebida", u, n);
+		System.out.println("Digite um novo valor para 'Preço de venda'");
+		int p = Utils.scanner.nextInt();
+		Bebida b = new Bebida("Bebida", p, n);
 		BebidasCollection.alterarBebida(id, b);
 		System.out.println("======================================"); 
 		BebidasCollection.listarBebidaIndividual(id);

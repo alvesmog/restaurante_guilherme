@@ -3,7 +3,7 @@ package parentClasses;
 public abstract class Alimento {
 	
 	protected String tipo;
-	protected String unidadeDeVenda;
+	protected int precoDeVenda;
 	protected String descricao;
 
 	
@@ -13,11 +13,11 @@ public abstract class Alimento {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getUnidadeDeVenda() {
-		return unidadeDeVenda;
+	public int getprecoDeVenda() {
+		return precoDeVenda;
 	}
-	public void setUnidadeDeVenda(String unidadeDeVenda) {
-		this.unidadeDeVenda = unidadeDeVenda;
+	public void setprecoDeVenda(int precoDeVenda) {
+		this.precoDeVenda = precoDeVenda;
 	}
 	public String getDescricao() {
 		return descricao;

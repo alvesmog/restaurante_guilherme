@@ -15,10 +15,11 @@ public class ComidasCollection {
 	public static void listarComidas() {
 		System.out.println("LISTAGEM DE COMIDAS");
 		System.out.println("======================================"); 
-		System.out.println("ID<--->UNIDADE DE VENDA<--->DESCRIÇÃO");
+		System.out.println("ID<--->TIPO<--->UNIDADE DE VENDA<--->DESCRIÇÃO");
 		System.out.println("======================================"); 
+		
 		for (int i = 0; i<comidas.size(); i++) {
-			System.out.println("- " + i + ", " + comidas.get(i).getDescricao() + ", " + comidas.get(i).getUnidadeDeVenda());
+			System.out.println("- " + i + ", " + comidas.get(i).getTipo() + ", " + comidas.get(i).getprecoDeVenda() + ", " + comidas.get(i).getDescricao());
 			
 		}
 		
@@ -37,11 +38,23 @@ public class ComidasCollection {
 	}
 	
 	public static void listarComidaIndividual(int i) {
-		System.out.println("- " + i + ", " + comidas.get(i).getDescricao() + ", " + comidas.get(i).getUnidadeDeVenda());
+		System.out.println("- " + i + ", " + comidas.get(i).getDescricao() + ", " + comidas.get(i).getprecoDeVenda() + ", " + comidas.get(i).getTipo());
 	}
 	
 	public static void alterarComida(int id, Comida b) {
 		comidas.set(id, b);
+	}
+	
+	public static int obterTamanhoDaLista() {
+		return comidas.size();
+	}
+	
+	public static Comida obterComida(int i) {
+		return comidas.get(i);
+	}
+	
+	public static void listarComidaNoPedido(int i) {
+		System.out.println("- " + i + ", " + comidas.get(i).getDescricao());
 	}
 		
 }
