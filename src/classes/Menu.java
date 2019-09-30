@@ -37,7 +37,8 @@ public class Menu {
 
 		String opcao = Utils.scanner.next();
 		if (opcao.equals("1")) {
-			// Tela de cliente
+			Utils.limparTela();
+			menuClientes();
 		} else if (opcao.equals("2")) {
 			Utils.limparTela();
 			menuComidas();

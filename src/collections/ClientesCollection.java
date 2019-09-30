@@ -40,7 +40,7 @@ public class ClientesCollection {
 		System.out.println("- " + i + ", " + clientes.get(i).getNome());
 	}
 	
-	public static void alterarComida(int id, Cliente c) {
+	public static void alterarCliente(int id, Cliente c) {
 		clientes.set(id, c);
 	}
 		

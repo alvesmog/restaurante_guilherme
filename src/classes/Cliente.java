@@ -66,36 +66,36 @@ public class Cliente {
 
 	}
 
-	// Alterar bebida
-	public static void alterarBebida() {
-		System.out.println("Digite o índice da bebida que deseja alterar: ");
+	// Alterar cliente
+	
+	public static void alterarCliente() {
+		
+		System.out.println("Digite o índice do cliente que deseja alterar: ");
 		System.out.println("");
-		listarBebidas();
+		ClientesCollection.listarClientes();
 		int id = Utils.scanner.nextInt();
 		Utils.limparTela();
-		BebidasCollection.listarBebidaIndividual(id);
+		ClientesCollection.listarClienteIndividual(id);
 		System.out.println("======================================");
 		System.out.println("Digite um novo valor para 'Nome'");
 		String n = Utils.scanner.next();
-		System.out.println("Digite um novo valor para 'Unidade de venda'");
-		String u = Utils.scanner.next();
-		Bebida b = new Bebida("Bebida", u, n);
-		BebidasCollection.alterarBebida(id, b);
+		Cliente c = new Cliente(n);
+		ClientesCollection.alterarCliente(id, c);
 		System.out.println("======================================");
-		BebidasCollection.listarBebidaIndividual(id);
+		ClientesCollection.listarClienteIndividual(id);
 		System.out.println("");
 		System.out.println("Digite [v] para voltar");
 
 		String opcao = Utils.scanner.next();
 		if (opcao.equals("v")) {
-			Menu.menuBebidas();
+			Menu.menuClientes();
 		}
 
 	}
 
 	// Listar bebidas
-	public static void listarBebidas() {
-		BebidasCollection.listarBebidas();
+	public static void listarClientes() {
+		ClientesCollection.listarClientes();
 	}
 
 }
