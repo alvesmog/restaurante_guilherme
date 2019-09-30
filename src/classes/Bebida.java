@@ -22,7 +22,6 @@ public class Bebida extends Alimento{
 	}
 	
 	//Adicionar bebida
-
 	public static void adicionarBebida() {
 		
 		System.out.println("Digite o nome da bebida: ");
@@ -44,13 +43,12 @@ public class Bebida extends Alimento{
 		
 		String opcao = Utils.scanner.next();		
 		if (opcao.equals("v")) {
-			main.menuBebidas();
+			Menu.menuBebidas();
 		}
 		
 	}
 	
 	//Deletar bebida
-	
 	public static void deletarBebida() {
 		System.out.println("Digite o índice da bebida que deseja deletar: ");
 		System.out.println("");
@@ -91,7 +89,7 @@ public class Bebida extends Alimento{
 		
 		String opcao = Utils.scanner.next();		
 		if (opcao.equals("v")) {
-			main.menuBebidas();
+			Menu.menuBebidas();
 		}
 		
 	}

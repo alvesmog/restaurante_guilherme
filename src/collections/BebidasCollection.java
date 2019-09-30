@@ -1,6 +1,7 @@
 package collections;
 import java.util.ArrayList;
 import classes.Bebida;
+import classes.Menu;
 import classes.main;
 import utils.Utils;
 
@@ -27,7 +28,7 @@ public class BebidasCollection {
 		
 		String opcao = Utils.scanner.next();		
 		if (opcao.equals("v")) {
-			main.menuBebidas();
+			Menu.menuBebidas();
 		}
 		
 	}
