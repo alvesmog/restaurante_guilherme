@@ -15,7 +15,7 @@ public class ComidasCollection {
 	public static void listarComidas() {
 		System.out.println("LISTAGEM DE COMIDAS");
 		System.out.println("======================================"); 
-		System.out.println("ID<--->TIPO<--->UNIDADE DE VENDA<--->DESCRIÇÃO");
+		System.out.println("ID<--->TIPO<--->PREÃ‡O<--->DESCRIÃ‡ÃƒO");
 		System.out.println("======================================"); 
 		
 		for (int i = 0; i<comidas.size(); i++) {

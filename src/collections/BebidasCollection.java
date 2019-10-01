@@ -1,6 +1,7 @@
 package collections;
 import java.util.ArrayList;
 import classes.Bebida;
+import classes.Comida;
 import classes.Menu;
 import classes.main;
 import utils.Utils;
@@ -16,7 +17,7 @@ public class BebidasCollection {
 	public static void listarBebidas() {
 		System.out.println("LISTAGEM DE BEBIDAS");
 		System.out.println("======================================"); 
-		System.out.println("ID<--->UNIDADE DE VENDA<--->DESCRIÇÃO");
+		System.out.println("ID<--->UNIDADE DE VENDA<--->DESCRIï¿½ï¿½O");
 		System.out.println("======================================"); 
 		for (int i = 0; i<bebidas.size(); i++) {
 			System.out.println("- " + i + ", " + bebidas.get(i).getDescricao() + ", " + bebidas.get(i).getprecoDeVenda());
@@ -43,6 +44,18 @@ public class BebidasCollection {
 	
 	public static void alterarBebida(int id, Bebida b) {
 		bebidas.set(id, b);
+	}
+	
+	public static int obterTamanhoDaLista() {
+		return bebidas.size();
+	}
+	
+	public static Bebida obterBebida(int i) {
+		return bebidas.get(i);
+	}
+	
+	public static void listarBebidaNoPedido(int i) {
+		System.out.println("- " + i + ", " + bebidas.get(i).getDescricao());
 	}
 		
 }

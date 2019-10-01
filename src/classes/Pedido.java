@@ -1,5 +1,6 @@
 package classes;
 
+import collections.BebidasCollection;
 import collections.ClientesCollection;
 import collections.ComidasCollection;
 import utils.Utils;
@@ -24,10 +25,10 @@ public class Pedido {
 		String client_id = Utils.scanner.next();
 		Utils.limparTela();
 		
-		//Obtendo a opção de entrada
-		System.out.println("Escolha uma entrada. Caso não deseje uma entrada, digite 'N':");
-		
-		//Essa função itera a coleção de comidas e retorna apenas as do tipo "Entrada"
+		//Obtendo a opï¿½ï¿½o de entrada
+		System.out.println("Escolha uma entrada. Caso nï¿½o deseje uma entrada, digite 'N':");
+		System.out.println("ID | DescriÃ§Ã£o");
+		//Essa funï¿½ï¿½o itera a coleï¿½ï¿½o de comidas e retorna apenas as do tipo "Entrada"
 		for(int i = 0; i<ComidasCollection.obterTamanhoDaLista();i++) { 		
 			if(ComidasCollection.obterComida(i).getTipo().equals("1")) {
 				ComidasCollection.listarComidaNoPedido(i);
@@ -36,14 +37,43 @@ public class Pedido {
 		String entrada_id = Utils.scanner.next();
 		Utils.limparTela();
 		
-		System.out.println("Escolha um prato principal. Caso não deseje prato principal, digite 'N':");
-		//Lista pratos principais
-		System.out.println("Escolha uma sobremesa. Caso não deseje sobremesa, digite 'N':");
-		//Lista sobremesa
-		System.out.println("Escolha uma bebida. Caso não deseje bebida, digite 'N':");
-		//Lista bebidas
+		//Obtendo opÃ§Ã£o de prato-principal
+		System.out.println("Escolha um prato principal. Caso nï¿½o deseje prato principal, digite 'N':");
+		System.out.println("ID | DescriÃ§Ã£o");
+		//Essa funï¿½ï¿½o itera a coleï¿½ï¿½o de comidas e retorna apenas as do tipo "Principal"
+		for(int i = 0; i<ComidasCollection.obterTamanhoDaLista();i++) { 		
+			if(ComidasCollection.obterComida(i).getTipo().equals("2")) {
+				ComidasCollection.listarComidaNoPedido(i);
+			}		
+		}
+		String principal_id = Utils.scanner.next();
+		Utils.limparTela();
 		
-		System.out.println("Sumário do pedido:");
+		//Obtendo sobremesa
+		System.out.println("Escolha uma sobremesa. Caso nï¿½o deseje sobremesa, digite 'N':");
+		System.out.println("ID | DescriÃ§Ã£o");
+		//Essa funï¿½ï¿½o itera a coleï¿½ï¿½o de comidas e retorna apenas as do tipo "Principal"
+		for(int i = 0; i<ComidasCollection.obterTamanhoDaLista();i++) { 		
+			if(ComidasCollection.obterComida(i).getTipo().equals("3")) {
+				ComidasCollection.listarComidaNoPedido(i);
+			}		
+		}
+		String sobremesa_id = Utils.scanner.next();
+		Utils.limparTela();
+		
+		//Obtendo bebida
+		System.out.println("Escolha uma bebida. Caso nï¿½o deseje bebida, digite 'N':");
+
+		//Essa funï¿½ï¿½o itera a coleï¿½ï¿½o de bebidas"
+		System.out.println("ID | DescriÃ§Ã£o");
+		for(int i = 0; i<BebidasCollection.obterTamanhoDaLista();i++) { 		
+				BebidasCollection.listarBebidaNoPedido(i);	
+		}
+		
+		String bebida_id = Utils.scanner.next();
+		Utils.limparTela();
+		
+		System.out.println("SumÃ¡rio do pedido:");
 		//Traz o pedido
 		
 		System.out.println("Confirmar?");
