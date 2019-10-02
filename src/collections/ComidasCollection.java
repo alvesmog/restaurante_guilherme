@@ -56,5 +56,9 @@ public class ComidasCollection {
 	public static void listarComidaNoPedido(int i) {
 		System.out.println("- " + i + ", " + comidas.get(i).getDescricao());
 	}
+	
+	public static Comida getComida(int i) {
+		return comidas.get(i);
+	}
 		
 }

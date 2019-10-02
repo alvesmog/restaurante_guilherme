@@ -2,6 +2,7 @@ package collections;
 import java.util.ArrayList;
 import classes.Menu;
 import utils.Utils;
+import classes.Bebida;
 import classes.Cliente;
 
 //Classe para armazenar os clientes cadastrados
@@ -45,5 +46,9 @@ public class ClientesCollection {
 	public static void alterarCliente(int id, Cliente c) {
 		clientes.set(id, c);
 	}
-		
+	
+	public static Cliente obterCliente(int i) {
+		return clientes.get(i);
+	}
+	
 }
